@@ -104,6 +104,17 @@ if (
 
                                                         </select>
                                                     </div>
+
+                                                    <div class="form-group">
+                                                        <label>Status Kehadiran</label>
+                                                        <select class="custom-select" name="status">
+                                                            <option><?php echo "$edit[status_kehadiran]"; ?></option>
+                                                            <option>HADIR</option>
+                                                            <option>SAKIT</option>
+                                                            <option>IZIN</option>
+                                                            <option>tIDAK HADIR</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label>Jumlah Jam</label>
                                                         <input type="text" class="form-control" name="jam" value="<?php echo "$edit[jumlah_jam]" ?>">

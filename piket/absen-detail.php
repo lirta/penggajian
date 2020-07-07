@@ -72,25 +72,32 @@ if (
                                                 <tr>
                                                     <th width="15%">Tanggal</th>
                                                     <th>Guru</th>
-                                                    <th width="15%">Jumlah jam</th>
                                                     <th width="15%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
-                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen inner join pegawai on absen.id_pegawai=pegawai.id_pegawai where month(tanggal)='$_GET[b]' AND year(tanggal)='$_GET[t]'");
+                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen inner join pegawai on absen.id_pegawai=pegawai.id_pegawai  group by MONTH(tanggal)");
                                                 while ($hasil = mysqli_fetch_assoc($query)) {
-                                                    $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
-                                                    $pc = explode('-', $hasil['tanggal']);
-                                                    $t = $pc[0];
-                                                    $b = $pc[1];
-                                                    $h = $pc[2];
-                                                    echo "<tr>
-                                                        <td>$tgl</td>
-                                                        <td>$hasil[nama_pegawai]</td>
-                                                        <td>$hasil[jumlah_jam]</td>
-                                                        <td><a href='absen-edit.php?id=$hasil[id_absen]' class='btn btn-warning btn-sm'>EDIT</a> <a href='absen-hapus.php?id=$hasil[id_absen]' class='btn btn-danger btn-sm'>HAPUS</a></td>
-                                                        </tr>";
+                                                    if ($hasil['id_pegawai'] == $_GET['id']) {
+
+                                                        $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
+                                                        $pc = explode('-', $hasil['tanggal']);
+                                                        $t = $pc[0];
+                                                        $b = $pc[1];
+                                                        $h = $pc[2];
+
+                                                        echo "<tr>
+                                                            <td>$tgl</td>
+                                                            <td>$hasil[nama_pegawai]</td>
+                                                            <td><a href='absen-detail-p.php?id=$hasil[id_pegawai]&t=$t&b=$b' class='btn btn-primary btn-sm'>DETAIL</a></td>
+                                                            </tr>";
+                                                    }
+                                                    // echo "<tr>
+                                                    //         <td>$hasil[tanggal]</td>
+                                                    //         <td>$hasil[nama_pegawai]</td>
+                                                    //         <td><a href='absen-detail-p.php?id=$hasil[id_pegawai]&t=$t&b=$b' class='btn btn-primary btn-sm'>DETAIL</a></td>
+                                                    // </tr>";
                                                 } ?>
 
 

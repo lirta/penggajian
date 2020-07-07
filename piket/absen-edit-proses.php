@@ -15,7 +15,7 @@ $j = $t . '-' . $b . '-' . $m;
 
 
 
-$querii = "UPDATE absen SET tanggal='$j',id_pegawai='$_POST[guru]',jumlah_jam='$_POST[jam]' where id_absen='$id'";
+$querii = "UPDATE absen SET tanggal='$j',id_pegawai='$_POST[guru]',jumlah_jam='$_POST[jam]',status_kehadiran='$_POST[status]' where id_absen='$id'";
 mysqli_query($koneksi, $querii);
 mysqli_close($koneksi);
 header('location:absen_view.php');

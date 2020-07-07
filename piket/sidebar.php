@@ -37,7 +37,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="absen_view.php" class="nav-link">
+          <a href="absen-view-kariawan.php" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
               Absensi Kariawan

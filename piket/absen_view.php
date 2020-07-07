@@ -76,17 +76,22 @@ if (
                                             </thead>
                                             <tbody>
 
-                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen group by MONTH(tanggal)");
+                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen   group by id_pegawai ");
                                                 while ($hasil = mysqli_fetch_assoc($query)) {
-                                                    $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
-                                                    $pc = explode('-', $hasil['tanggal']);
-                                                    $t = $pc[0];
-                                                    $b = $pc[1];
-                                                    $h = $pc[2];
-                                                    echo "<tr>
-                                                        <td>$tgl</td>
-                                                        <td><a href='absen-detail.php?t=$t&b=$b' class='btn btn-primary btn-sm'>DETAIL</a></td>
-                                                        </tr>";
+                                                    $qur = mysqli_query($koneksi, "SELECT * FROM pegawai  where id_pegawai ='$hasil[id_pegawai]' ");
+                                                    $ha = mysqli_fetch_assoc($qur);
+                                                    // $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
+                                                    // $pc = explode('-', $hasil['tanggal']);
+                                                    // $t = $pc[0];
+                                                    // $b = $pc[1];
+                                                    // $h = $pc[2];
+                                                    if ($ha['kategori'] == "GURU") {
+                                                        # code...
+                                                        echo "<tr>
+                                                            <td>$ha[nama_pegawai]</td>
+                                                            <td><a href='absen-detail.php?id=$hasil[id_pegawai]' class='btn btn-primary btn-sm'>DETAIL</a></td>
+                                                            </tr>";
+                                                    }
                                                 } ?>
 
 

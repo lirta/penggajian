@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2020 at 02:28 PM
+-- Generation Time: Jul 07, 2020 at 09:21 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -32,25 +32,30 @@ CREATE TABLE `absen` (
   `id_absen` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `id_pegawai` varchar(50) NOT NULL,
-  `jumlah_jam` int(11) NOT NULL
+  `jumlah_jam` int(11) NOT NULL,
+  `status_kehadiran` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `absen`
 --
 
-INSERT INTO `absen` (`id_absen`, `tanggal`, `id_pegawai`, `jumlah_jam`) VALUES
-(7, '2020-05-01', 'GURU38456745', 4),
-(8, '2020-05-02', 'GURU38456745', 6),
-(9, '2020-05-03', 'GURU38456745', 4),
-(10, '2020-05-04', 'GURU38456745', 4),
-(11, '2020-05-05', 'GURU38456745', 2),
-(12, '2020-05-06', 'GURU38456745', 4),
-(13, '2020-05-07', 'GURU38456745', 6),
-(14, '2020-05-08', 'GURU38456745', 3),
-(15, '2020-06-01', 'GURU38456745', 5),
-(16, '2020-06-02', 'GURU38456745', 6),
-(17, '2020-06-04', 'GURU38456745', 4);
+INSERT INTO `absen` (`id_absen`, `tanggal`, `id_pegawai`, `jumlah_jam`, `status_kehadiran`) VALUES
+(7, '2020-05-01', 'GURU38456745', 4, 'HADIR'),
+(8, '2020-05-02', 'GURU38456745', 6, 'HADIR'),
+(9, '2020-05-03', 'GURU38456745', 4, 'HADIR'),
+(10, '2020-05-04', 'GURU38456745', 4, 'HADIR'),
+(11, '2020-05-05', 'GURU38456745', 2, 'HADIR'),
+(12, '2020-05-06', 'GURU38456745', 4, 'HADIR'),
+(13, '2020-05-07', 'GURU38456745', 6, 'HADIR'),
+(14, '2020-05-08', 'GURU38456745', 3, 'HADIR'),
+(15, '2020-06-01', 'GURU38456745', 5, 'HADIR'),
+(16, '2020-06-02', 'GURU38456745', 6, 'HADIR'),
+(17, '2020-06-04', 'GURU38456745', 4, 'HADIR'),
+(21, '2020-07-04', 'GURU4816686', 9, 'HADIR'),
+(22, '2020-07-05', 'KARIAWAN39990407', 0, 'HADIR'),
+(23, '2020-07-05', 'KARIAWAN47276490', 0, 'HADIR'),
+(24, '2020-07-05', 'GURU38456745', 1000, 'HADIR');
 
 -- --------------------------------------------------------
 
@@ -119,7 +124,32 @@ INSERT INTO `detail_gaji` (`id_detail_gaji`, `id_gaji`, `keterangan`, `jumlah`) 
 (47, 'GKARIAWAN4727649084615820', 'perpustakaan', 50000),
 (48, 'GKARIAWAN6017162084615820', 'gaji poko', 200000),
 (49, 'GKARIAWAN6017162084615820', 'transpor', 15000),
-(50, 'GKARIAWAN6017162084615820', 'bendahara', 70000);
+(50, 'GKARIAWAN6017162084615820', 'bendahara', 70000),
+(51, 'GGURU3845674568945244', 'jumlah jam ngajar0', 0),
+(52, 'GGURU3845674568945244', 'transpor', 15000),
+(53, 'GGURU3845674568945244', 'wali kelas', 40000),
+(54, 'GGURU3845674568945244', 'piket', 20000),
+(55, 'GGURU481668668945244', 'gaji pokok', 400000),
+(56, 'GGURU481668668945244', 'transpor', 15000),
+(57, 'GGURU481668668945244', 'wali kelas', 40000),
+(58, 'GGURU6025775668945244', 'gaji poko', 1000000),
+(59, 'GGURU6025775668945244', 'TUNJANGAN ISTRI/SUAMI', 50000),
+(60, 'GGURU6025775668945244', 'tunjangan anak', 100000),
+(61, 'GGURU6025775668945244', 'transpor', 15000),
+(62, 'GGURU6025775668945244', 'konsumsi', 20000),
+(63, 'GGURU6025775668945244', 'wali kelas', 40000),
+(64, 'GKARIAWAN3999040768945244', 'gaji poko', 900000),
+(65, 'GKARIAWAN3999040768945244', 'TUNJANGAN ISTRI/SUAMI', 45000),
+(66, 'GKARIAWAN3999040768945244', 'tunjangan anak', 90000),
+(67, 'GKARIAWAN3999040768945244', 'transpor', 15000),
+(68, 'GKARIAWAN3999040768945244', 'konsumsi', 20000),
+(69, 'GKARIAWAN3999040768945244', 'perpustakaan', 50000),
+(70, 'GKARIAWAN4727649068945244', 'gaji poko', 900000),
+(71, 'GKARIAWAN4727649068945244', 'transpor', 15000),
+(72, 'GKARIAWAN4727649068945244', 'perpustakaan', 50000),
+(73, 'GKARIAWAN6017162068945244', 'gaji poko', 200000),
+(74, 'GKARIAWAN6017162068945244', 'transpor', 15000),
+(75, 'GKARIAWAN6017162068945244', 'bendahara', 70000);
 
 -- --------------------------------------------------------
 
@@ -140,16 +170,22 @@ CREATE TABLE `gaji` (
 
 INSERT INTO `gaji` (`id_gaji`, `tgl`, `id_pegawai`, `jml_gaji`) VALUES
 ('GGURU3845674568208771', '2020-06-28', 'GURU38456745', 255000),
+('GGURU3845674568945244', '2019-12-28', 'GURU38456745', 75000),
 ('GGURU3845674584615820', '2020-05-28', 'GURU38456745', 471000),
 ('GGURU481668668208771', '2020-06-28', 'GURU4816686', 235000),
+('GGURU481668668945244', '2019-12-28', 'GURU4816686', 55000),
 ('GGURU481668684615820', '2020-05-28', 'GURU4816686', 451000),
 ('GGURU6025775668208771', '2020-06-28', 'GURU60257756', 1225000),
+('GGURU6025775668945244', '2019-12-28', 'GURU60257756', 1225000),
 ('GGURU6025775684615820', '2020-05-28', 'GURU60257756', 1225000),
 ('GKARIAWAN3999040768208771', '2020-06-28', 'KARIAWAN39990407', 1120000),
+('GKARIAWAN3999040768945244', '2019-12-28', 'KARIAWAN39990407', 1120000),
 ('GKARIAWAN3999040784615820', '2020-05-28', 'KARIAWAN39990407', 1120000),
 ('GKARIAWAN4727649068208771', '2020-06-28', 'KARIAWAN47276490', 965000),
+('GKARIAWAN4727649068945244', '2019-12-28', 'KARIAWAN47276490', 965000),
 ('GKARIAWAN4727649084615820', '2020-05-28', 'KARIAWAN47276490', 965000),
 ('GKARIAWAN6017162068208771', '2020-06-28', 'KARIAWAN60171620', 285000),
+('GKARIAWAN6017162068945244', '2019-12-28', 'KARIAWAN60171620', 285000),
 ('GKARIAWAN6017162084615820', '2020-05-28', 'KARIAWAN60171620', 285000);
 
 -- --------------------------------------------------------
@@ -317,7 +353,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `tmp_lahir`, `tgl_lahir`, `jenis_kel`, `agama`, `no_hp`, `alamat`, `status_perkawinan`, `jlh_anak`, `kategori`, `foto`) VALUES
-('GURU38456745', 'lirta', 'padang panjang', '18/12/1992', 'Laki-laki', 'Islam', '081277967050', 'Jl. Parmata', 'KAWIN', 1, 'GURU', 'GURU3d-games-wallpapers-3d-picture-3d-wallpaper_oWEbyQ7.jpg'),
+('GURU38456745', 'lirta p', 'padang panjang', '18/12/1992', 'Laki-laki', 'Islam', '081277967050', 'Jl. Parmata', 'KAWIN', 1, 'GURU', 'GURU3d-games-wallpapers-3d-picture-3d-wallpaper_oWEbyQ7.jpg'),
 ('GURU4816686', 'inda', 'padang', '18/11/1990', 'Laki-laki', 'Islam', '081277967050', 'Jl. Pinus 235', 'KAWIN', 4, 'GURU', 'GURU3D-Action-Games-HD-Wallpaper.jpg'),
 ('GURU60257756', 'mario pandiangan sitompul', 'medan', '10/05/1995', 'Laki-laki', 'Islam', '081277967050', 'Jl. Pinus 235x', 'KAWIN', 2, 'GURU', 'GURU3d-games-wallpapers-3d-picture-3d-wallpaper_oWEbyQ7.jpg'),
 ('KARIAWAN39990407', 'yulian', 'pariaman', '05/05/1997', 'Laki-laki', 'Islam', '8438747', 'garuda sakti', 'JANDA/DUDA', 3, 'KARIAWAN', 'KARIAWANdevil-may-cry-background.jpg'),
@@ -428,13 +464,13 @@ ALTER TABLE `tunjangan`
 -- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `detail_gaji`
 --
 ALTER TABLE `detail_gaji`
-  MODIFY `id_detail_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_detail_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `golongan`
