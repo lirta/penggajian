@@ -87,6 +87,14 @@ if (
                                                         <label>Gaji Pokok</label>
                                                         <input type="text" class="form-control" name="gp" value="<?php echo "$edit[jml_golongan]"; ?>">
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Transport</label>
+                                                        <input type="text" class="form-control" name="tr" value="<?php echo "$edit[tunjangan]"; ?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Konsumsi</label>
+                                                        <input type="text" class="form-control" name="kon" value="<?php echo "$edit[konsumsi]"; ?>">
+                                                    </div>
                                                     <!-- /.card-body -->
 
                                                     <div class="card-footer">

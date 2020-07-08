@@ -8,7 +8,7 @@ if (
 ) {
     header('location:../pages/login/login.php');
 } else {
-    if ($_SESSION['akses'] == "BENDAHARA") {
+    if ($_SESSION['akses'] == "KEPALASEKOLAH") {
 
 ?>
         <!DOCTYPE html>
@@ -50,7 +50,7 @@ if (
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1>Data Golongan </h1>
+                                    <h1>Data gaji </h1>
                                 </div>
                             </div>
                         </div><!-- /.container-fluid -->
@@ -62,30 +62,24 @@ if (
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href='golongan-add.php' class='btn btn-primary'>TAMBAH DATA</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Pegawai</th>
-                                                    <th>Ketegori</th>
-                                                    <th>Golongan</th>
+                                                    <th>Tanggal</th>
                                                     <th width="15%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
-                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM golongan inner join pegawai on golongan.id_pegawai=pegawai.id_pegawai inner join master_golongan on golongan.id_m_golongan=master_golongan.id_m_golongan ");
+                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM gaji group by tgl desc ");
                                                 while ($hasil = mysqli_fetch_assoc($query)) { ?>
                                                     <tr>
-                                                        <td><?php echo "$hasil[nama_pegawai]"; ?></td>
-                                                        <td><?php echo "$hasil[kategori]"; ?></td>
-                                                        <td><?php echo "$hasil[golongan]"; ?></td>
+                                                        <td><?php echo "$hasil[tgl]"; ?></td>
                                                     <?php echo "
-                                                        <td><a href='golongan-edit.php?id=$hasil[id_golongan]' class='btn btn-warning btn-sm'>EDIT</a>
-                                                        <a href='golongan-hapus.php?id=$hasil[id_golongan]' class='btn btn-danger btn-sm'>HAPUS</a></td>
+                                                        <td><a href='gaji-detail.php?id=$hasil[tgl]' class='btn btn-primary btn-sm'>DETAIL</a></td>
                                                         </tr>";
                                                 } ?>
 

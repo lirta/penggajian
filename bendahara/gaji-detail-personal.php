@@ -17,7 +17,7 @@ if (
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>SMK 3 MUHAMMADIAH TERPADU PEKANBARU</title>
+            <title>SMK 3 MUHAMMADIYAH TERPADU PEKANBARU</title>
             <!-- Tell the browser to be responsive to screen width -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -89,11 +89,6 @@ if (
                                                         <td><?php echo "Rp.  " . number_format($hasil['jumlah'], 0, ".", ","); ?></td>
                                                     </tr>
                                                 <?php } ?>
-
-                                                <tr>
-                                                    <td>TOTAL GAJI</td>
-                                                    <td><?php echo "$us[jml_gaji]"; ?></td>
-                                                </tr>
 
                                             </tbody>
                                             <tfoot>

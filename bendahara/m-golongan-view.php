@@ -70,6 +70,8 @@ if (
                                                 <tr>
                                                     <th>Golongan</th>
                                                     <th>Gaji Pokok</th>
+                                                    <th>Transpor</th>
+                                                    <th>Konsumsi</th>
                                                     <th width="15%">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -80,6 +82,8 @@ if (
                                                     <tr>
                                                         <td><?php echo "$hasil[golongan]"; ?></td>
                                                         <td><?php echo "Rp.  " . number_format($hasil['jml_golongan'], 0, ".", ","); ?></td>
+                                                        <td><?php echo "Rp.  " . number_format($hasil['tunjangan'], 0, ".", ","); ?></td>
+                                                        <td><?php echo "Rp.  " . number_format($hasil['konsumsi'], 0, ".", ","); ?></td>
                                                     <?php echo "
                                                         <td><a href='m-golongan-edit.php?id=$hasil[id_m_golongan]' class='btn btn-warning btn-sm'>EDIT</a>
                                                         </tr>";

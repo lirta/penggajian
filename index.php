@@ -14,6 +14,8 @@ if (
     header('location:bendahara/index.php');
   } elseif ($_SESSION['akses'] == "PIKET") {
     header('location:piket/index.php');
+  } elseif ($_SESSION['akses'] == "KEPALASEKOLAH") {
+    header('location:kepsek/index.php');
   } else {
     echo '<script language="javascript">
                   alert ("Anda Tidak Punya Akses");

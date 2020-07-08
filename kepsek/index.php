@@ -8,7 +8,7 @@ if (
 ) {
   header('location:../pages/login/login.php');
 } else {
-  if ($_SESSION['akses'] == "ADMIN") {
+  if ($_SESSION['akses'] == "KEPALASEKOLAH") {
 
 ?>
     <!DOCTYPE html>
@@ -17,7 +17,7 @@ if (
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>SMK 3 MUHAMMADIAH TERPADU PEKANBARU</title>
+      <title>SMK Muhammadyah 3 Terpadu Pekanbaru</title>
       <!-- Tell the browser to be responsive to screen width -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Font Awesome -->
@@ -44,97 +44,23 @@ if (
 
     <body class="hold-transition sidebar-mini layout-fixed">
       <div class="wrapper">
-
-        <!-- Navbar -->
         <?php include 'navbar.php';
         include 'sidebar.php'; ?>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
           <div class="content-header">
             <div class="container-fluid">
               <div class="row mb-2">
                 <div class="col-sm-6">
                   <h1 class="m-0 text-dark">Dashboard</h1>
-                </div><!-- /.col -->
+                </div>
               </div><!-- /.row -->
             </div><!-- /.container-fluid -->
           </div>
-          <!-- /.content-header -->
-
-          <!-- Main content -->
-          <section class="content">
-            <div class="container-fluid">
-              <!-- Small boxes (Stat box) -->
-              <?php
-              $g = 0;
-              $kn = 0;
-              $queri = mysqli_query($koneksi, "SELECT * FROM pegawai ");
-              while ($kolom = mysqli_fetch_assoc($queri)) {
-                if ($kolom['kategori'] == "GURU") {
-                  $g = $g + 1;
-                } else {
-                  $kn = $kn + 1;
-                }
-              }
-              ?>
-              <div class="row">
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-info">
-                    <div class="inner">
-                      <h3><?php echo "$g"; ?></h3>
-
-                      <p>GURU</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="guru_view.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-              </div>
-              <!-- /.row -->
-              <!-- Main row -->
-              <div class="row">
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-info">
-                    <div class="inner">
-                      <h3><?php echo "$kn"; ?></h3>
-
-                      <p>KARIYAWAN</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="kariawan_view.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- /.row (main row) -->
-            </div><!-- /.container-fluid -->
-          </section>
-          <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
         <?php include 'footer.php'; ?>
-
-        <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-          <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
       </div>
-      <!-- ./wrapper -->
-
-      <!-- jQuery -->
       <script src="../plugins/jquery/jquery.min.js"></script>
       <!-- jQuery UI 1.11.4 -->
       <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>

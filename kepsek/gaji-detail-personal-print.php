@@ -8,7 +8,7 @@ if (
 ) {
     header('location:../pages/login/login.php');
 } else {
-    if ($_SESSION['akses'] == "BENDAHARA") {
+    if ($_SESSION['akses'] == "KEPALASEKOLAH") {
 
 ?>
         <!DOCTYPE html>

@@ -99,6 +99,7 @@ if (
                               <option>ADMIN</option>
                               <option>BENDAHARA</option>
                               <option>PIKET</option>
+                              <option value="KEPALASEKOLAH">KEPALA SEKOLAH</option>
                             </select>
                           </div>
                           <!-- /.card-body -->
