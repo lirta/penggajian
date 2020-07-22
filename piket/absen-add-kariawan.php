@@ -66,7 +66,7 @@ if (
 
                                     <div class="card card-danger">
                                         <div class="card-header">
-                                            <h3 class="card-title">Input Data Guru</h3>
+                                            <h3 class="card-title">Input Data Absen</h3>
                                         </div>
                                         <div class="card-body">
                                             <!-- Date dd/mm/yyyy -->
@@ -74,7 +74,7 @@ if (
 
                                             <form role="form" action="absen-add-proses.php" method="post" enctype="multipart/form-data">
                                                 <div class="form-group ">
-                                                    <label>Tanggal Lahir</label>
+                                                    <label>Tanggal </label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
@@ -103,10 +103,10 @@ if (
                                                         <option>tIDAK HADIR</option>
                                                     </select>
                                                 </div>
-                                                <!-- <div class="form-group">
+                                                <div class="form-group" hidden>
                                                     <label>Jumlah Jam</label>
                                                     <input type="text" class="form-control" name="jam">
-                                                </div> -->
+                                                </div>
                                                 <!-- /.card-body -->
 
                                                 <div class="card-footer">

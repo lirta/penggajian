@@ -70,7 +70,7 @@ if (
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Bulan</th>
+                                                    <th>Nama Guru</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>

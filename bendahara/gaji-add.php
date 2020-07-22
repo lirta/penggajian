@@ -75,7 +75,7 @@ if (
                                             <form role="form" action="gaji-add-proses.php" method="post" enctype="multipart/form-data">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label>Pegawai</label>
+                                                        <label>Bulan</label>
                                                         <select class="custom-select" name="b">
                                                             <?php $query = mysqli_query($koneksi, "SELECT * FROM absen group by MONTH(tanggal)");
                                                             while ($hasil = mysqli_fetch_assoc($query)) {
@@ -89,7 +89,7 @@ if (
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Golongan</label>
+                                                        <label>Tahun</label>
                                                         <select class="custom-select" name="t">
                                                             <?php $qt = mysqli_query($koneksi, "SELECT * FROM absen group by year(tanggal)");
                                                             while ($tt = mysqli_fetch_assoc($qt)) {

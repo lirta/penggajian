@@ -9,7 +9,7 @@
         <img src="<?php echo "../foto/$_SESSION[foto]"; ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block"><?php echo "$_SESSION[foto]"; ?></a>
+        <a href="#" class="d-block"><?php echo "$_SESSION[akses]"; ?></a>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
             <li class="nav-item">
               <a href="kariawan_view.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Kariyawan</p>
+                <p>Karyawan</p>
               </a>
             </li>
           </ul>

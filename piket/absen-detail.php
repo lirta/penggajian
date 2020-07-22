@@ -71,28 +71,28 @@ if (
                                             <thead>
                                                 <tr>
                                                     <th width="15%">Tanggal</th>
-                                                    <th>Guru</th>
+                                                    <th>nama</th>
                                                     <th width="15%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen inner join pegawai on absen.id_pegawai=pegawai.id_pegawai  group by MONTH(tanggal)");
+                                                <?php $query = mysqli_query($koneksi, "SELECT * FROM absen  where id_pegawai='$_GET[id]'  group by MONTH(tanggal)");
                                                 while ($hasil = mysqli_fetch_assoc($query)) {
-                                                    if ($hasil['id_pegawai'] == $_GET['id']) {
+                                                    // if ($hasil['id_pegawai'] == $_GET['id']) {
+                                                    $qpe = mysqli_query($koneksi, "SELECT * FROM pegawai where id_pegawai='$hasil[id_pegawai]'");
+                                                    $pe = mysqli_fetch_assoc($qpe);
+                                                    $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
+                                                    $pc = explode('-', $hasil['tanggal']);
+                                                    $t = $pc[0];
+                                                    $b = $pc[1];
+                                                    $h = $pc[2];
 
-                                                        $tgl = date("d-M-Y", strtotime($hasil['tanggal']));
-                                                        $pc = explode('-', $hasil['tanggal']);
-                                                        $t = $pc[0];
-                                                        $b = $pc[1];
-                                                        $h = $pc[2];
-
-                                                        echo "<tr>
+                                                    echo "<tr>
                                                             <td>$tgl</td>
-                                                            <td>$hasil[nama_pegawai]</td>
+                                                            <td>$pe[nama_pegawai]</td>
                                                             <td><a href='absen-detail-p.php?id=$hasil[id_pegawai]&t=$t&b=$b' class='btn btn-primary btn-sm'>DETAIL</a></td>
                                                             </tr>";
-                                                    }
+                                                    // }
                                                     // echo "<tr>
                                                     //         <td>$hasil[tanggal]</td>
                                                     //         <td>$hasil[nama_pegawai]</td>

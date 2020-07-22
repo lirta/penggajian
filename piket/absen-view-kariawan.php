@@ -70,7 +70,7 @@ if (
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Bulan</th>
+                                                    <th>nama</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -89,7 +89,7 @@ if (
                                                         # code...
                                                         echo "<tr>
                                                             <td>$ha[nama_pegawai]</td>
-                                                            <td><a href='absen-detail.php?id=$hasil[id_pegawai]' class='btn btn-primary btn-sm'>DETAIL</a></td>
+                                                            <td><a href='absen-detail.php?id=$ha[id_pegawai]' class='btn btn-primary btn-sm'>DETAIL</a></td>
                                                             </tr>";
                                                     }
                                                 } ?>

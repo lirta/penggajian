@@ -71,7 +71,7 @@ if (
                                             <thead>
                                                 <tr>
                                                     <th width="15%">Tanggal</th>
-                                                    <th>Guru</th>
+                                                    <th>Nama</th>
                                                     <th>Status Kehadiran</th>
                                                     <th>Jumlah jam</th>
                                                     <th width="15%">Aksi</th>
